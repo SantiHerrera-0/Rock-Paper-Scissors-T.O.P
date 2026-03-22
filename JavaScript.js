@@ -20,22 +20,39 @@ function selectWinner(humanChoice, computerChoice){
     return ganador;  
 }
 
-    function playRound(humanChoice, computerChoice){
-        ganador = selectWinner(humanChoice,computerChoice);
-        switch(ganador){
-            case 0:
-                console.log("Hubo empate!");
-                break;
-            case 1:
-                console.log(`Perdiste! ${computerChoice} vence a ${humanChoice}`);
-                computerScore ++;
-                break
-            case 2:
-                console.log(`Ganaste! ${humanChoice} vence a ${computerChoice}`);
-                humanScore ++;
-                break;
-            default:
-                console.log("No hubo un ingreso valido.");
-                break;
-        }
+function playRound(humanChoice, computerChoice){
+    ganador = selectWinner(humanChoice,computerChoice);
+    switch(ganador){
+        case 0:
+            console.log("Hubo empate!");
+            break;
+        case 1:
+            console.log(`Perdiste! ${computerChoice} vence a ${humanChoice}`);
+            computerScore ++;
+            break
+        case 2:
+            console.log(`Ganaste! ${humanChoice} vence a ${computerChoice}`);
+            humanScore ++;
+            break;
+        default:
+            console.log("No hubo un ingreso valido.");
+            break;
     }
+}
+
+function ganadorFinal(){
+    if (humanScore >computerScore){
+        console.log("El ganador es el humano!");
+    }else if(computerScore >humanScore){
+        console.log("La ganadora es la maquina!");
+    }else{
+        console.log("No hubo gandor!")
+    }
+    
+}
+for(let i=0; i<5; i++){
+    playRound(getHumanChoice(), getComputerChoice());
+    console.log(`El puntaje es: Humano ${humanScore}, Maquina ${computerScore}`);
+}
+
+ganadorFinal();
