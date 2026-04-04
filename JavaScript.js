@@ -24,17 +24,32 @@ function selectWinner(humanChoice, computerChoice){
 function playRound(humanChoice, computerChoice){
     ganador = selectWinner(humanChoice,computerChoice);
     switch(ganador){
-        case 0:
-            console.log("Hubo empate!");
+        case 0:{
+            /*console.log("Hubo empate!");*/
+            const div = document.querySelector("div");
+            const resultado = document.createElement("p");
+            resultado.textContent = "Hubo empate!";
+            div.appendChild(resultado);
             break;
-        case 1:
-            console.log(`Perdiste! ${computerChoice} vence a ${humanChoice}`);
+        }
+        case 1:{
+            /*console.log(`Perdiste! ${computerChoice} vence a ${humanChoice}`);*/
+            const div = document.querySelector("div");
+            const resultado = document.createElement("p");
+            resultado.textContent = `Perdiste! ${computerChoice} vence a ${humanChoice}`;
+            div.appendChild(resultado);
             computerScore ++;
             break
-        case 2:
-            console.log(`Ganaste! ${humanChoice} vence a ${computerChoice}`);
+        }
+        case 2:{
+            /*console.log(`Ganaste! ${humanChoice} vence a ${computerChoice}`);*/
+            const div = document.querySelector("div");
+            const resultado = document.createElement("p");
+            resultado.textContent = `Ganaste! ${humanChoice} vence a ${computerChoice}`;
+            div.appendChild(resultado);
             humanScore ++;
             break;
+        }
         default:
             console.log("No hubo un ingreso valido.");
             break;

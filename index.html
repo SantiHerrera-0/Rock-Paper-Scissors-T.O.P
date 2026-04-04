@@ -10,12 +10,13 @@
     <button class = "piedra">Piedras</button>
     <button class = "papel">Papel</button>
     <button class = "tijera">Tijeras</button>
+    <div style = "background-color: white;"></div>
     <script src="JavaScript.js"></script>
     <script>
         const botonPiedra = document.querySelector(".piedra");
         const botonPapel  = document.querySelector(".papel");
         const botonTijera = document.querySelector(".tijera");
-        
+
         botonPiedra.addEventListener("click", ()=> playRound("piedra", getComputerChoice()));
         botonPapel.addEventListener("click", ()=> playRound("papel", getComputerChoice()));
         botonTijera.addEventListener("click", ()=> playRound("tijera", getComputerChoice()));
