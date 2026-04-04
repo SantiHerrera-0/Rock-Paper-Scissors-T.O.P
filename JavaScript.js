@@ -28,26 +28,35 @@ function playRound(humanChoice, computerChoice){
             /*console.log("Hubo empate!");*/
             const div = document.querySelector("div");
             const resultado = document.createElement("p");
+            const puntaje = document.createElement("p");
             resultado.textContent = "Hubo empate!";
             div.appendChild(resultado);
+            puntaje.textContent = `El puntaje actual es: Humano = ${humanScore} vs Maquina = ${computerScore}`;
+            div.appendChild(puntaje);
             break;
         }
         case 1:{
             /*console.log(`Perdiste! ${computerChoice} vence a ${humanChoice}`);*/
             const div = document.querySelector("div");
             const resultado = document.createElement("p");
+            const puntaje = document.createElement("p");
             resultado.textContent = `Perdiste! ${computerChoice} vence a ${humanChoice}`;
             div.appendChild(resultado);
             computerScore ++;
-            break
+            puntaje.textContent = `El puntaje actual es: Humano = ${humanScore} vs Maquina = ${computerScore}`;
+            div.appendChild(puntaje);
+            break;
         }
         case 2:{
             /*console.log(`Ganaste! ${humanChoice} vence a ${computerChoice}`);*/
             const div = document.querySelector("div");
             const resultado = document.createElement("p");
+            const puntaje = document.createElement("p");
             resultado.textContent = `Ganaste! ${humanChoice} vence a ${computerChoice}`;
             div.appendChild(resultado);
             humanScore ++;
+            puntaje.textContent = `El puntaje actual es: Humano = ${humanScore} vs Maquina = ${computerScore}`;
+            div.appendChild(puntaje);
             break;
         }
         default:
@@ -70,6 +79,7 @@ function ganadorFinal(){
     playRound(getHumanChoice(), getComputerChoice());
     console.log(`El puntaje es: Humano ${humanScore}, Maquina ${computerScore}`);
 }*/
+
 
 
 
