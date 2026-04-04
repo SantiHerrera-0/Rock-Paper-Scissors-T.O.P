@@ -59,9 +59,6 @@ function playRound(humanChoice, computerChoice){
             div.appendChild(puntaje);
             break;
         }
-        default:
-            console.log("No hubo un ingreso valido.");
-            break;
     }
 }
 
