@@ -1,6 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
 
+
 function getComputerChoice(){
     let decision = "piedra|papel|tijera";
     const array = decision.split("|");
@@ -8,7 +9,8 @@ function getComputerChoice(){
     return array[random];
 }
 
-/*function getHumanChoice(){
+/*Antigua forma de tener la opcion del humano.
+function getHumanChoice(){
     let respuesta = prompt("Ingrese una opcion. (Piedra|Papel|Tijera)");
     return respuesta.toLowerCase();
 }*/
@@ -23,6 +25,9 @@ function selectWinner(humanChoice, computerChoice){
 
 function playRound(humanChoice, computerChoice){
     ganador = selectWinner(humanChoice,computerChoice);
+    if(humanScore === 5 || computerScore === 5){
+        return ganadorFinal();
+    }
     switch(ganador){
         case 0:{
             /*console.log("Hubo empate!");*/
@@ -63,20 +68,19 @@ function playRound(humanChoice, computerChoice){
 }
 
 function ganadorFinal(){
+    const div = document.querySelector("div");
+    const p = document.createElement("p");
     if (humanScore > computerScore){
-        console.log("El ganador es el humano!");
+        p.textContent = "El ganador es el humano!";
+        div.appendChild(p);
     }else if(computerScore > humanScore){
-        console.log("La ganadora es la maquina!");
-    }else{
-        console.log("No hubo gandor!")
+        p.textContent = "La ganadora es la maquina!";
+        div.appendChild(p);
     }
 }
 
-/*for(let i=0; i<5; i++){
+/*Antigua forma de hacer el ciclo.
+for(let i=0; i<5; i++){
     playRound(getHumanChoice(), getComputerChoice());
     console.log(`El puntaje es: Humano ${humanScore}, Maquina ${computerScore}`);
 }*/
-
-
-
-

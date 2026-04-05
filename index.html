@@ -16,11 +16,10 @@
         const botonPiedra = document.querySelector(".piedra");
         const botonPapel  = document.querySelector(".papel");
         const botonTijera = document.querySelector(".tijera");
-
+        
         botonPiedra.addEventListener("click", ()=> playRound("piedra", getComputerChoice()));
         botonPapel.addEventListener("click", ()=> playRound("papel", getComputerChoice()));
-        botonTijera.addEventListener("click", ()=> playRound("tijera", getComputerChoice()));
-        
+        botonTijera.addEventListener("click", ()=> playRound("tijera", getComputerChoice())); 
     </script>
 </body>
 </html>
